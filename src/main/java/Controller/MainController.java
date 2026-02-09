@@ -57,7 +57,7 @@ public class MainController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Sobre o Sistema");
         alert.setHeaderText("Informações do Sistema");
-        alert.setContentText("Nome: Sistema de Reservas\nVersão: 1.0.0\nDesenvolvedor: Peru\nAno: 2026");
+        alert.setContentText("Nome: Sistema de Reservas\nVersão: 1.0.0\nDesenvolvedor: Ryan Lucas Fernandes Pinheiro\nAno: 2026");
         alert.showAndWait();
     }
 

@@ -13,14 +13,6 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        // Geralmente deixamos vazio ou carregamos uma tela de "Bem-vindo"
-        // carregarTela("Home.fxml");
-    }
-
-    @FXML
-    public void abrirMainLayout() {
-        // Se este controller já é do MainLayout, carregar ele mesmo no centro causará erro.
-        // O ideal é carregar a tela inicial/home aqui.
     }
 
     @FXML
@@ -63,7 +55,6 @@ public class MainController {
 
     private void carregarTela(String fxml) {
         try {
-            // O "/" no início busca na raiz de resources
             Node tela = FXMLLoader.load(getClass().getResource("/fxml/" + fxml));
             if (root != null) {
                 root.setCenter(tela);

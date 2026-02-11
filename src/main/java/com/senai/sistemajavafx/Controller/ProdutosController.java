@@ -13,8 +13,6 @@ public class ProdutosController {
     public void initialize() {
     }
 
-
-
     @FXML
     private TextField nomeProduto;
 

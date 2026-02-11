@@ -13,13 +13,11 @@ public class HomeController {
 
     @FXML
     public void initialize() {
-        // Removido para evitar erro de recursão e "Location is required"
     }
 
 
     private void carregarTela(String fxml) {
         try {
-            // O "/" no início busca na raiz de resources, evitando duplicação de pastas
             Node tela = FXMLLoader.load(getClass().getResource("/fxml/" + fxml));
             if (root != null) {
                 root.setCenter(tela);

@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<AnchorPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.sistemajavafx.Controller.LoginController">
    <children>
       <BorderPane fx:id="root" layoutX="7.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: fabrizio-conti-kXVogATbFgA-unsplash.jpg;" />
       <ImageView fitHeight="445.0" fitWidth="618.0" pickOnBounds="true" preserveRatio="true">
@@ -33,7 +33,7 @@
                   <Font name="System Bold" size="35.0" />
                </font>
             </Text>
-            <TextField fx:id="nomeUsuario" layoutX="28.0" layoutY="82.0" prefHeight="25.0" prefWidth="245.0" promptText="Nome do Usuário" style="-fx-background-color: transparent; -fx-text-fill: snow; -fx-prompt-text-fill: snow;">
+            <TextField fx:id="emailUsuario" layoutX="28.0" layoutY="82.0" prefHeight="25.0" prefWidth="245.0" promptText="E-mail do Usuário" style="-fx-background-color: transparent; -fx-text-fill: snow; -fx-prompt-text-fill: snow;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -48,15 +48,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="161.0" layoutY="177.0" text="Clique aqui!" textFill="#57c2ff" underline="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </Label>
-            <Button layoutX="63.0" layoutY="234.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" style="-fx-background-color: lightskyblue; -fx-background-radius: 20;" text="Logar">
+            <Button layoutX="63.0" layoutY="234.0" mnemonicParsing="false" onAction="#logar" prefHeight="25.0" prefWidth="181.0" style="-fx-background-color: lightskyblue; -fx-background-radius: 20;" text="Logar">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -66,9 +58,17 @@
             </Button>
             <Line endX="141.0" layoutX="132.0" layoutY="107.0" startX="-100.0" stroke="WHITE" />
             <Line endX="141.0" layoutX="133.0" layoutY="163.0" startX="-100.0" stroke="WHITE" />
-            <Button layoutX="64.0" layoutY="265.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" style="-fx-border-color: lightskyblue; -fx-background-color: transparent; -fx-border-radius: 20; -fx-background-radius: 20;" text="Criar nova conta" textFill="LIGHTSKYBLUE">
+            <Button layoutX="64.0" layoutY="265.0" mnemonicParsing="false" onAction="#criarConta" prefHeight="25.0" prefWidth="181.0" style="-fx-border-color: lightskyblue; -fx-background-color: transparent; -fx-border-radius: 20; -fx-background-radius: 20;" text="Criar nova conta" textFill="LIGHTSKYBLUE">
                <font>
                   <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnEsqueciMinhaSenha" layoutX="151.0" layoutY="173.0" mnemonicParsing="false" onAction="#abrirEsqueciSenha" style="-fx-background-color: transparent;" text="Clique Aqui!" textFill="#57c2ff" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />

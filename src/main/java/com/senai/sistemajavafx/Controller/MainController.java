@@ -1,4 +1,4 @@
-package Controller;
+package com.senai.sistemajavafx.Controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,19 +6,21 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
 
-public class NovaVendaController {
+public class MainController {
 
     @FXML
     private BorderPane root;
 
     @FXML
     public void initialize() {
-        // Removido para evitar loop de carregamento e erro de localização
+        // Geralmente deixamos vazio ou carregamos uma tela de "Bem-vindo"
+        // carregarTela("Home.fxml");
     }
 
     @FXML
     public void abrirMainLayout() {
-        carregarTela("MainLayout.fxml");
+        // Se este controller já é do MainLayout, carregar ele mesmo no centro causará erro.
+        // O ideal é carregar a tela inicial/home aqui.
     }
 
     @FXML
@@ -45,25 +47,29 @@ public class NovaVendaController {
     public void abrirProdutos() {
         carregarTela("CadastrarProdutos.fxml");
     }
+    @FXML
+    public void abrirHome() {
+        carregarTela("Home.fxml");
+    }
 
     @FXML
     public void abrirAjuda() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Sobre o Sistema");
         alert.setHeaderText("Informações do Sistema");
-        alert.setContentText("Nome: Sistema de Reservas\nVersão: 1.0.0\nDesenvolvedor: Peru\nAno: 2026");
+        alert.setContentText("Nome: Sistema de Reservas\nVersão: 1.0.0\nDesenvolvedor: Ryan Lucas Fernandes Pinheiro\nAno: 2026");
         alert.showAndWait();
     }
 
     private void carregarTela(String fxml) {
         try {
-            // O "/" inicial garante que o JavaFX busque a partir da raiz da pasta resources
+            // O "/" no início busca na raiz de resources
             Node tela = FXMLLoader.load(getClass().getResource("/fxml/" + fxml));
             if (root != null) {
                 root.setCenter(tela);
             }
         } catch (Exception e) {
-            System.err.println("Erro ao carregar FXML: /fxml/" + fxml);
+            System.err.println("Erro ao carregar: /fxml/" + fxml);
             e.printStackTrace();
         }
     }

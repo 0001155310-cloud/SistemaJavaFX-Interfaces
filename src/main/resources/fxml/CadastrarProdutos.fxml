@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProdutosController">
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.sistemajavafx.Controller.ProdutosController">
    <children>
       <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="609.0" style="-fx-background-color: linear-gradient(        to top,        #050b14 0%,        #0b1c2d 45%,        #12263a 100%    );;">
          <left>
@@ -38,7 +38,7 @@
          <bottom>
              <HBox prefHeight="49.0" prefWidth="572.0" BorderPane.alignment="CENTER">
                  <children>
-                     <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #7f1d1d; -fx-background-radius: 10;" text="Excluir" textFill="WHITE">
+                     <Button mnemonicParsing="false" onAction="#excluirProduto" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #7f1d1d; -fx-background-radius: 10;" text="Excluir" textFill="WHITE">
                          <HBox.margin>
                              <Insets left="10.0" />
                          </HBox.margin>
@@ -53,7 +53,7 @@
                          </effect>
                      </Button>
 
-                     <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #0f172a; -fx-background-radius: 10;" text="Voltar" textFill="WHITE">
+                     <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#voltarTela" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #0f172a; -fx-background-radius: 10;" text="Voltar" textFill="WHITE">
                          <font>
                              <Font name="System Bold" size="12.0" />
                          </font>
@@ -68,7 +68,7 @@
                          </HBox.margin>
                      </Button>
 
-                     <Button layoutX="110.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #334155; -fx-background-radius: 10;" text="Limpar" textFill="WHITE">
+                     <Button layoutX="110.0" layoutY="10.0" mnemonicParsing="false" onAction="#limparInformacoes" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #334155; -fx-background-radius: 10;" text="Limpar" textFill="WHITE">
                          <font>
                              <Font name="System Bold" size="12.0" />
                          </font>
@@ -93,7 +93,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Button layoutX="77.0" layoutY="282.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #1e40af; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" text="Salvar" textFill="WHITE">
+            <Button layoutX="77.0" layoutY="282.0" mnemonicParsing="false" onAction="#salvarProduto" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #1e40af; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" text="Salvar" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -111,31 +111,31 @@
                   </DropShadow>
                </effect>
             </Button>
-            <TextField fx:id="nomeCliente" layoutX="87.0" layoutY="63.0" prefHeight="27.0" prefWidth="205.0" promptText="Digite o nome do Produto..." style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-background-radius: 12; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 12;" />
+            <TextField fx:id="nomeProduto" layoutX="87.0" layoutY="63.0" prefHeight="27.0" prefWidth="205.0" promptText="Digite o nome do Produto..." style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-background-radius: 12; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 12;" />
             <Label layoutX="37.0" layoutY="67.0" text="Nome:" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="cpfCliente" layoutX="87.0" layoutY="101.0" prefHeight="27.0" prefWidth="205.0" promptText="Digite o código do Produto..." style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-background-radius: 12; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 12;" />
+            <TextField fx:id="codigoProduto" layoutX="87.0" layoutY="101.0" prefHeight="27.0" prefWidth="205.0" promptText="Digite o código do Produto..." style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-background-radius: 12; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 12;" />
             <Label layoutX="31.0" layoutY="105.0" text="Código:" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="telCliente" layoutX="86.0" layoutY="139.0" prefHeight="27.0" prefWidth="205.0" promptText="Inserir valor do produto" style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-background-radius: 12; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 12;" text="R$" />
+            <TextField fx:id="precoProduto" layoutX="86.0" layoutY="139.0" prefHeight="27.0" prefWidth="205.0" promptText="Inserir valor do produto" style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-background-radius: 12; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 12;" text="R$" />
             <Label layoutX="41.0" layoutY="143.0" text="Preço:" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="emailCliente" layoutX="86.0" layoutY="177.0" prefHeight="27.0" prefWidth="205.0" promptText="Quantidade em estoque..." style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-background-radius: 12; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 12;" />
+            <TextField fx:id="estoqueProduto" layoutX="86.0" layoutY="177.0" prefHeight="27.0" prefWidth="205.0" promptText="Quantidade em estoque..." style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-background-radius: 12; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 12;" />
             <Label layoutX="27.0" layoutY="181.0" text="Estoque:" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="enderecoCliente" layoutX="86.0" layoutY="215.0" prefHeight="27.0" prefWidth="205.0" promptText="Digite o nome do fornecedor..." style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-text-fill: white; -fx-background-radius: 12; -fx-border-color: white; -fx-border-radius: 12;" />
+            <TextField fx:id="fornecedorProduto" layoutX="86.0" layoutY="215.0" prefHeight="27.0" prefWidth="205.0" promptText="Digite o nome do fornecedor..." style="-fx-background-color: linear-gradient(        to right,        #334155,        #1e293b    ); -fx-text-fill: white; -fx-background-radius: 12; -fx-border-color: white; -fx-border-radius: 12;" />
             <Label layoutX="7.0" layoutY="219.0" text="Fornecedor:" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="System Bold" size="13.0" />

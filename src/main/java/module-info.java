@@ -6,6 +6,6 @@ module com.senai.sistemajavafx {
     opens com.senai.sistemajavafx to javafx.fxml;
     opens fxml to javafx.fxml;
     exports com.senai.sistemajavafx;
-    exports Controller;
-    opens Controller to javafx.fxml;
+    exports com.senai.sistemajavafx.Controller;
+    opens com.senai.sistemajavafx.Controller to javafx.fxml;
 }

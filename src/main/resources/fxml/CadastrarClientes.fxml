@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ClientesController">
+<AnchorPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.sistemajavafx.Controller.ClientesController">
    <children>
       <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="609.0" style="-fx-background-color: linear-gradient(        to top,        #050b14 0%,        #0b1c2d 45%,        #12263a 100%    );;">
          <left>
@@ -37,7 +37,7 @@
          <bottom>
              <HBox prefHeight="49.0" prefWidth="572.0" BorderPane.alignment="CENTER">
                  <children>
-                     <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #7f1d1d; -fx-background-radius: 10;" text="Excluir" textFill="WHITE">
+                     <Button mnemonicParsing="false" onAction="#excluirCliente" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #7f1d1d; -fx-background-radius: 10;" text="Excluir" textFill="WHITE">
                          <HBox.margin>
                              <Insets left="10.0" />
                          </HBox.margin>
@@ -52,7 +52,7 @@
                          </effect>
                      </Button>
 
-                     <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #0f172a; -fx-background-radius: 10;" text="Voltar" textFill="WHITE">
+                     <Button layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#voltarTela" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #0f172a; -fx-background-radius: 10;" text="Voltar" textFill="WHITE">
                          <font>
                              <Font name="System Bold" size="12.0" />
                          </font>
@@ -67,7 +67,7 @@
                          </HBox.margin>
                      </Button>
 
-                     <Button layoutX="110.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #334155; -fx-background-radius: 10;" text="Limpar" textFill="WHITE">
+                     <Button layoutX="110.0" layoutY="10.0" mnemonicParsing="false" onAction="#limparInformacoes" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #334155; -fx-background-radius: 10;" text="Limpar" textFill="WHITE">
                          <font>
                              <Font name="System Bold" size="12.0" />
                          </font>
@@ -92,7 +92,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Button layoutX="77.0" layoutY="282.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #1e40af; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" text="Salvar" textFill="WHITE">
+            <Button layoutX="77.0" layoutY="282.0" mnemonicParsing="false" onAction="#salvarCliente" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #1e40af; -fx-border-color: white; -fx-border-radius: 20; -fx-background-radius: 20;" text="Salvar" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

@@ -7,7 +7,7 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane fx:id="root" prefHeight="431.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
+<BorderPane fx:id="root" prefHeight="431.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.sistemajavafx.Controller.MainController">
     <top>
         <MenuBar style="-fx-background-color: linear-gradient(to left, rgba(11, 28, 45, 0.85), white);" styleClass="menu-top" BorderPane.alignment="CENTER">
             <menus>
